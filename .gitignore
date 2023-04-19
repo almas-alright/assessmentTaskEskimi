@@ -3,3 +3,4 @@ phpunit.xml
 composer.lock
 bin/
 .idea
+.DS_Store

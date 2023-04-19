@@ -8,8 +8,9 @@ use DateTime;
 
 class CalculateCommissionFees
 {
-//    const EXCHANGE_RATE_URL = 'https://developers.paysera.com/tasks/api/currency-exchange-rates';
-    const EXCHANGE_RATE_URL = '/Users/jmc/Downloads/skeleton-commission-task-master/testOldValue.json';
+   const EXCHANGE_RATE_URL = 'https://developers.paysera.com/tasks/api/currency-exchange-rates';
+   //   for test uncomment line below and comment line above
+//    const EXCHANGE_RATE_URL = '/Users/jmc/Downloads/skeleton-commission-task-master/testOldValue.json';
     private $exchangeRates;
     private $csvData = array();
     private $userWideOperation;
@@ -37,7 +38,6 @@ class CalculateCommissionFees
             $read['currency'] = $row[5];
             $read['commission'] = 0;
             $read['calculated'] = false;
-
             $this->csvData[] = $read;
         }
         fclose($handle);
@@ -116,7 +116,6 @@ class CalculateCommissionFees
             $this->calculate($value['userId'], $value['date']);
             echo $this->csvData[$key]['commission']."\n";
         }
-
     }
 
 }
