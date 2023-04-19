@@ -9,7 +9,7 @@ $csvFile = $argv[1];
 $commissionFees = new CalculateCommissionFees($csvFile);
 
 try {
-    $commissionFees->calculateFees();
+    echo $commissionFees->calculateFees();
 } catch (Exception $e) {
-
+    echo 'Message: ' .$e->getMessage();
 }

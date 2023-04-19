@@ -9,7 +9,7 @@ use DateTime;
 class CalculateCommissionFees
 {
    const EXCHANGE_RATE_URL = 'https://developers.paysera.com/tasks/api/currency-exchange-rates';
-   //   for test uncomment line below and comment line above
+   //   test with old value
 //    const EXCHANGE_RATE_URL = '/Users/jmc/Downloads/skeleton-commission-task-master/testOldValue.json';
     private $exchangeRates;
     private $csvData = array();
@@ -112,10 +112,12 @@ class CalculateCommissionFees
      * @throws \Exception
      */
     public function calculateFees(){
+        $result = "";
         foreach ($this->csvData as $key => $value){
             $this->calculate($value['userId'], $value['date']);
-            echo $this->csvData[$key]['commission']."\n";
+            $result .= $this->csvData[$key]['commission']."\n";
         }
+        return $result;
     }
 
 }
