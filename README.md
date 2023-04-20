@@ -6,4 +6,5 @@ Installation :
  - clone this repository
  - from its directory run `composer install`
  - in same directory root there is a `example.csv` file
- - now run `script.php example.csv` 
+ - to calculate commission fees run `script.php example.csv` 
+ - to test run `composer test`
