@@ -8,9 +8,7 @@ use DateTime;
 
 class CalculateCommissionFees
 {
-   const EXCHANGE_RATE_URL = 'https://developers.paysera.com/tasks/api/currency-exchange-rates';
-   //   test with old value
-//    const EXCHANGE_RATE_URL = '/Users/jmc/Downloads/skeleton-commission-task-master/testOldValue.json';
+    const EXCHANGE_RATE_URL = 'https://developers.paysera.com/tasks/api/currency-exchange-rates';
     private $exchangeRates;
     private $csvData = array();
     private $userWideOperation;
